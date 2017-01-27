@@ -1,0 +1,29 @@
+{
+  "name": "jquery-alphanum",
+  "version": "1.0.24",
+  "main": [
+    "jquery.alphanum.js"
+  ],
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    ".jshintrc",
+    "*.md",
+    "*.json",
+    "*.html",
+    "*.txt",
+    "lib",
+    "test"
+  ],
+  "homepage": "https://github.com/KevinSheedy/jquery.alphanum",
+  "_release": "1.0.24",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.24",
+    "commit": "d03778d8aa5d3d5bcc952c0b10688e15fd3be8d8"
+  },
+  "_source": "https://github.com/KevinSheedy/jquery.alphanum.git",
+  "_target": "^1.0.24",
+  "_originalSource": "jquery-alphanum",
+  "_direct": true
+}

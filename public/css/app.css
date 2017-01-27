@@ -1,0 +1,12 @@
+body
+{
+	background-color: #fafafa;
+}
+.div-line{
+	background-color: #337ab7;
+	height: 5px;
+	margin-bottom: 30px;
+}
+[v-cloak] {
+  display: none;
+}

@@ -60,8 +60,6 @@
 
 <script src="{{ asset('js/vue-resource/dist/vue-resource.js') }}"></script>
 
-<script src="{{ asset('js/app.js') }}"></script>
-
 @yield("scripts")
 
 

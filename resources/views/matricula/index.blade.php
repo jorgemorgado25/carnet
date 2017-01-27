@@ -3,13 +3,15 @@
 	Listado de Matricula
 @endsection
 @section('content')
-<div class="row">
-<div class="col-md-12">
+
+
 	<h3>Listado de Matrículas</h3><br>
 	@include('partials.error-message')
 	@include('partials.success-message')
-	<div class="box box-primary">
-		<div class="box-header with-border">
+
+	<div class="panel panel-default">
+		<div class="panel-body">			
+			
 			<div class="row">
 				<div class="col-xs-3">
 					<div class="form-group">
@@ -19,6 +21,7 @@
 						'v-model' => 'escolaridad_id']) !!}	
 					</div>
 				</div>
+			
 				<div class="col-xs-3">
 					<div class="form-group">
 						<label for="">Mención</label>
@@ -63,36 +66,29 @@
 					<button :disabled="formValid()" style="margin-top:2.2em" class="btn btn-sm btn-primary" @click="buscarMatricula()">
 						<span class="glyphicon glyphicon-search"></span>
 					</button>				
-				</div>
-			</div>		
-		</div>
-		<div class="box-body with-border">
+				</div>				
+			</div>
+			<hr>
+			<div class="text-center" v-if="buscando">
+				<i class=" text-center fa fa-spinner fa-spin fa-4x"></i>
+			</div>
+			<div id="div-message">
+				<p class="alert alert-info text-center">Seleccione una Sección</p>
+			</div>
+	
 			<div v-if="error" v-cloak>
 				<p  class="alert alert-danger text-center">@{{ error }}</p>
 				<span>
 					<button @click="createMatricula()" class="btn btn-default pull-right"><span class="glyphicon glyphicon-upload"></span> &nbsp;Cargar Matrícula</button>
 				</span>				
-			</div>			
-
-			<p class="text-center" v-if="buscando" v-cloak>
-				<i class=" text-center fa fa-spinner fa-spin fa-4x"></i>
-			</p>
+			</div>
 
 			<div v-if="matriculas" v-if="matriculas.length > 1" v-cloack>
-				<button class="btn btn-sm btn-primary">
-					<span class="glyphicon glyphicon-plus"></span>
-					Agregar Estudiante
-				</button>
-				<button class="btn btn-sm btn-primary">
-					<span class="glyphicon glyphicon-print"></span>
-					Imprimir
-				</button>
+				
 				<span class="pull-right">
-					<button class="btn btn-sm btn-danger" onclick="eliminar_nomina()"><span class="glyphicon glyphicon-trash"></span> Eliminar Nómina</button>			
-				</span>
-
-				<hr>
-				<table class="table table-striped" id="table">
+					<button class="btn btn-sm btn-danger" onclick="eliminar_nomina()"><span class="glyphicon glyphicon-trash"></span> Eliminar Nómina</button>		
+				</span><br><br>
+				<table class="table table-bordered table-striped" id="table">
 					<thead>
 					<tr>
 						<th>N.</th>
@@ -123,13 +119,10 @@
 					</tbody>
 				</table>
 			</div>
-			<div id="div-message">
-				<p class="alert alert-info text-center">Seleccione una Sección</p>
-			</div>
 		</div>
-	</div>	
-</div>
-</div>
+	</div>
+
+
 @endsection
 
 @section('scripts')
@@ -246,8 +239,8 @@
 			},
 			formValid: function()
 			{
-				//if (this.seccion_id && this.escolaridad_id) { return false } else { return true };
-				return true;
+				if (this.seccion_id && this.escolaridad_id) { return false } else { return true };
+				
 			},
 			clearEstudiantes: function()
 			{

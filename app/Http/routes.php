@@ -34,13 +34,18 @@ Route::group(['middleware' => 'guest'], function()
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function()
 {
-	
+	Route::get('dashboard', [
+		'uses' => 'AdminController@dashboard',
+		'as' => 'admin.dashboard'
+	]);
+
+	Route::get('logout', [
+		'uses' => 'AdminController@logout',
+		'as' => 'admin.logout'
+	]);
 });
 
-Route::get('dashboard', [
-	'uses' => 'AdminController@dashboard',
-	'as' => 'admin.dashboard'
-]);
+
 Route::resource('students', 'StudentsController');
 Route::resource('matricula', 'MatriculaController');
 Route::resource('matricula/carnet', 'MatriculaController@carnet');

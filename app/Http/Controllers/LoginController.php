@@ -26,7 +26,7 @@ class LoginController extends Controller
                 Session::flash('error-message','Usted no tiene permisos para ingresar.');
                 return Redirect::route('login.admin');
             }
-            return Redirect::to('/dashboard');
+            return Redirect::route('admin.dashboard');
         }
         Session::flash('error-message','Sus credenciales son inválidas');
         return Redirect::route('login.admin');

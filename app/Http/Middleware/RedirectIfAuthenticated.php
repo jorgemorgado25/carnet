@@ -2,6 +2,7 @@
 
 namespace Carnet\Http\Middleware;
 
+use Redirect;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,9 +17,9 @@ class RedirectIfAuthenticated
      * @return mixed
      */
     public function handle($request, Closure $next, $guard = null)
-    {
+    {z
         if (Auth::guard($guard)->check()) {
-            return redirect('/admin/dashboard');
+            return redirect(route('admin.dashboard'));
         }
 
         return $next($request);

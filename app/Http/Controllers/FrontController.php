@@ -32,19 +32,31 @@ class FrontController extends Controller
     	return view('front.index', compact('dias', 'meses'));
     }
 
+    public function test_carnet()
+    {
+        $register = Register::find(1);
+        return view('front.pdf_carnet', ['register' => $register]);
+        //$pdf = \PDF::loadView('front.pdf_carnet', ['register' => $register]);
+        //return $pdf->download('carnet.pdf');
+        //return $pdf->stream('carnet.pdf')
+            //->header('Content-Type','application/pdf');
+    }
+
     public function pdf_carnet(Request $request)
     {
         $register = Register::find($request->session()->get('carnet'));
         $request->session()->forget('carnet');
 
-        $pdf = \PDF::loadView('front.pdf_carnet', ['register' => $register]);
-        return $pdf->download('carnet.pdf');
-
-        //$view =  \View::make('front.pdf_carnet', (['register' => $register]))->render();
-        //$pdf = \App::make('dompdf.wrapper');
-        //$pdf->loadHTML($view)->setPaper('letter');
-        //$pdf->loadHTML($view)->setPaper('a4')->setOrientation('landscape');
+        //$pdf = \PDF::loadView('front.pdf_carnet', ['register' => $register]);
+        //return $pdf->download('carnet.pdf');
         //return $pdf->stream('carnet.pdf')
+            //->header('Content-Type','application/pdf');
+
+        $view =  \View::make('front.pdf_carnet', (['register' => $register]))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view)->setPaper('letter');
+        $pdf->loadHTML($view)->setPaper('a4')->setOrientation('landscape');
+        return $pdf->stream('carnet.pdf');
             //->header('Content-Type','application/pdf');
     }
 

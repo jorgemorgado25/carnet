@@ -27,9 +27,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         
-        <li><a href="{{ route('students.index') }}">Estudiantes</a></li>
-        <li><a href="{{ route('matricula.index') }}">Matrícula</a></li>
-        <li><a href="{{ route('students.index') }}">Escolaridades</a></li>
+        <li><a href="{{ route('admin.students.index') }}">Estudiantes</a></li>
+        <li><a href="{{ route('admin.matricula.index') }}">Matrícula</a></li>
+        <li><a href="{{ route('admin.students.index') }}">Escolaridades</a></li>
        
         
       </ul>

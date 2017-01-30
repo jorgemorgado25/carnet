@@ -3,8 +3,8 @@
 
 <div class="div-line"></div>
 <div class="container col-md-8 col-md-offset-2">
-	<img src="img/logo-lti-400.png" alt="" class="pull-right" width="70px" style="margin-left:20px">
-	<h4>Liceo Horario Integral "Juan Germán Roscio"</h4>
+	<img src="img/logo-ln-400.png" alt="" class="pull-right" width="70px" style="margin-left:20px">
+	<h4>Liceo Nacional "Juan Germán Roscio"</h4>
 	<h4 style="margin-bottom: 40px">Sistema Automatizado Emisión de Carnet</h4>
 	@if(Session::has('session-carnet'))		
 		<p class="alert alert-danger text-center">
@@ -17,7 +17,6 @@
 		</div>
 		<div class="row">
 			<div class="panel-body">
-
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="">Cédula de Identidad</label>

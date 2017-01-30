@@ -103,7 +103,7 @@ class StudentsController extends Controller
         $student->fill($request->all());
         $student->save();
         Session::flash('success-message', 'El estudiante fue editado exitosamente');
-        return Redirect::route('students.show', $student->id);
+        return Redirect::route('admin.students.show', $student->id);
     }
 
     /**

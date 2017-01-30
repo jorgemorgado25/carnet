@@ -16,6 +16,11 @@ Route::get('/', [
 	'as'   => 'front.index'
 ]);
 
+Route::get('/test_carnet', [
+	'uses' => 'FrontController@test_carnet',
+	'as'   => 'front.test'
+]);
+
 Route::group(['middleware' => 'carnet'], function()
 {
 	Route::get('/pdf_carnet', [
@@ -43,12 +48,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function()
 		'uses' => 'AdminController@logout',
 		'as' => 'admin.logout'
 	]);
+
+	Route::resource('students', 'StudentsController');
+	Route::resource('matricula', 'MatriculaController');
+	Route::resource('matricula/carnet', 'MatriculaController@carnet');
+	
 });
 
 
-Route::resource('students', 'StudentsController');
-Route::resource('matricula', 'MatriculaController');
-Route::resource('matricula/carnet', 'MatriculaController@carnet');
 Route::post('escolaridades/activar', 'EscolaridadesController@activar');
 
 Route::get('/admin', [
@@ -77,6 +84,8 @@ Route::get('buscar_inscripciones_seccion/{escolaridad_id}/{seccion_id}', 'Inscri
 Route::get('student/buscar_ci/{cedula}', 'StudentsController@buscar_ci');
 
 Route::get('matricula/getMatriculaSeccion/{escolaridad_id}/{seccion_id}', 'MatriculaController@getMatriculaSeccion');
+Route::post('matricula/postEliminar', 'MatriculaController@postEliminar');
+Route::post('matricula/postEliminarRegistro', 'MatriculaController@postEliminarRegistro');
 
 Route::group(['prefix' => 'api'], function()
 {

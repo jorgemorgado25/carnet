@@ -97,9 +97,7 @@
 		top:20px;
 		left: 70px;
 		border: solid 1px #000;
-	}
-
-	
+	}	
 
 	#h3-cedula
 	{
@@ -158,12 +156,12 @@
 	<div id="main">
 		
 	<img src="img/fondo.png" id="bg-carnet"/>
-	<img src="img/bg-logo.png" id="bg-logo"/>
+	<img src="img/bg-logo-ln.png" id="bg-logo"/>
 
 	<p id="p-republica">
 		REPÚBLICA BOLIVARIANA DE VENEZUELA
 		<br>
-		LICEO TURNO INTEGRAL
+		LICEO NACIONAL
 		<br>
 		<span id="span-jgr">"JUAN GERMÁN ROSCIO"</span>
 		<br>

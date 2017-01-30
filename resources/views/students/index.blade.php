@@ -9,7 +9,7 @@
 
 	<div class="panel-header">
 		
-		{!! Form::open(['route' => 'students.index', 'method' => 'GET', 'class' => 'navbar-form navbar-left pull-right', 'role' => 'search']) !!}
+		{!! Form::open(['route' => 'admin.students.index', 'method' => 'GET', 'class' => 'navbar-form navbar-left pull-right', 'role' => 'search']) !!}
 			<p>Hay {{ $estudiantes->total() }} estudiantes registrados</p>
 			<select name="" id="sel-tipo" class="form-control">
 				<option value="ci">Cédula</option>
@@ -39,9 +39,9 @@
 					<td>{{ $estudiante->ci }}</td>
 					<td>{{ $estudiante->full_name }}</td>
 					<td>
-						<a title="Ver" class="btn btn-default btn-sm" href="{{ route('students.show', $estudiante) }}"><span class="glyphicon glyphicon-search"></span></a>
+						<a title="Ver" class="btn btn-default btn-sm" href="{{ route('admin.students.show', $estudiante) }}"><span class="glyphicon glyphicon-search"></span></a>
 
-						<a title="Editar" class="btn btn-default btn-sm" href="{{ route('students.edit', $estudiante) }}"><span class="glyphicon glyphicon-pencil"></span></a>				
+						<a title="Editar" class="btn btn-default btn-sm" href="{{ route('admin.students.edit', $estudiante) }}"><span class="glyphicon glyphicon-pencil"></span></a>				
 						
 					</td>
 				</tr>

@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		<hr>
-		<a href="{{ route('students.edit', $estudiante) }}" class="btn btn-primary" type="submit" id="btn-submit"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+		<a href="{{ route('admin.students.edit', $estudiante) }}" class="btn btn-primary" type="submit" id="btn-submit"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
 	</div>
 </div>
 
@@ -54,7 +54,7 @@
 					<td>{{ $reg->person->full_name }}</td>
 					<td>{{ $reg->person->ci }}</td>					
 					<td>
-						<a target="_blank" title="Carnet Estudiantil" href="/matricula/carnet/{{ $reg->id }}" class="btn btn-default btn-sm">
+						<a target="_blank" title="Carnet Estudiantil" href="/admin/matricula/carnet/{{ $reg->id }}" class="btn btn-default btn-sm">
 							<span class="glyphicon glyphicon-credit-card"></span>
 							</a>
 					</td>

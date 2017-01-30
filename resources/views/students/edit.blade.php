@@ -10,7 +10,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-		{!! Form::model($student, ['route' => ['students.update', $student->id], 'method' => 'PUT']) !!}
+		{!! Form::model($student, ['route' => ['admin.students.update', $student->id], 'method' => 'PUT']) !!}
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
@@ -52,7 +52,7 @@
 		</div>
 		<hr>
 		<button class="btn btn-primary"> <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp; Guardar </button>
-		<a href="{{ route('students.show', $student) }}" class="btn btn-danger">Cancelar</a>
+		<a href="{{ route('admin.students.show', $student) }}" class="btn btn-danger">Cancelar</a>
 	</div>
 	
 	</div>	

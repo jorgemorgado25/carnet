@@ -10,7 +10,7 @@
 	@include('partials.success-message')
 
 	<div class="panel panel-default">
-		<div class="panel-body">			
+		<div class="panel-body">		
 			
 			<div class="row">
 				<div class="col-xs-3">
@@ -83,9 +83,10 @@
 				</span>				
 			</div>
 
-			<div v-if="matriculas" v-if="matriculas.length > 1" v-cloack>
-				
-				<span class="pull-right">
+			<div v-if="matriculas" v-if="matriculas.length > 1" v-cloak>
+
+				Hay @{{ matriculas.length }} estudiantes registrados
+				<span class="pull-right">                                      
 					<button class="btn btn-sm btn-danger" onclick="eliminar_nomina()"><span class="glyphicon glyphicon-trash"></span> Eliminar Nómina</button>		
 				</span><br><br>
 				<table class="table table-bordered table-striped" id="table">
@@ -126,6 +127,7 @@
 @endsection
 
 @section('scripts')
+<script src="{{ asset('/js/bootbox.min.js') }}"></script>
 <script src="{{ asset('/js/vue-functions.js') }}"></script>
 
 <script>

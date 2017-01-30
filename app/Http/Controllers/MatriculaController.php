@@ -206,7 +206,7 @@ class MatriculaController extends Controller
     {
         $register = Register::find($register_id);
 
-        $pdf = \PDF::loadView('matricula.carnet', ['register' => $register]);
+        $pdf = \PDF::loadView('front.pdf_carnet', ['register' => $register]);
         return $pdf->download('carnet.pdf');
         #$pdf = \App::make('dompdf.wrapper');
         #$pdf->loadHTML($view)->setPaper('letter');
